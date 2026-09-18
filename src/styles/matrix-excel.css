@@ -1,0 +1,404 @@
+/* MatrixSheet - Microsoft Excel 365 Fluent UI Design System */
+:root {
+  --excel-green: #107c41;
+  --excel-dark-green: #0b5a2f;
+  --excel-light-green: #e8f5e9;
+  --excel-selection: #107c41;
+  --excel-selection-bg: rgba(16, 124, 65, 0.12);
+  --bg-app: #f3f2f1;
+  --bg-grid: #ffffff;
+  --border-color: #d2d0ce;
+  --header-bg: #f8f9fa;
+  --text-primary: #201f1e;
+  --text-secondary: #605e5c;
+  --font-fluent: "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-fluent);
+  background-color: var(--bg-app);
+  color: var(--text-primary);
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
+  user-select: none;
+}
+
+[dir="rtl"] {
+  direction: rtl;
+  text-align: right;
+}
+
+/* Excel Top Title Bar */
+.excel-title-bar {
+  background-color: var(--excel-green);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6px 16px;
+  height: 42px;
+}
+
+.brand-section {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.excel-icon-svg {
+  width: 24px;
+  height: 24px;
+  fill: white;
+}
+
+.workbook-title {
+  font-size: 0.95rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.title-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.btn-title-action {
+  background: rgba(255, 255, 255, 0.15);
+  color: white;
+  border: none;
+  padding: 4px 12px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.btn-title-action:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+/* Ribbon Menu Tabs */
+.ribbon-tabs {
+  background-color: white;
+  display: flex;
+  border-bottom: 1px solid var(--border-color);
+  padding: 0 10px;
+}
+
+.ribbon-tab {
+  padding: 8px 14px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  cursor: pointer;
+  border-bottom: 3px solid transparent;
+  transition: all 0.15s ease;
+}
+
+.ribbon-tab:hover {
+  color: var(--text-primary);
+}
+
+.ribbon-tab.active {
+  color: var(--excel-green);
+  border-bottom-color: var(--excel-green);
+}
+
+/* Ribbon Toolbar Actions */
+.ribbon-toolbar {
+  background-color: #faf9f8;
+  border-bottom: 1px solid var(--border-color);
+  padding: 6px 12px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  overflow-x: auto;
+}
+
+.tool-group {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 0 6px;
+  border-inline-end: 1px solid var(--border-color);
+}
+
+.ribbon-btn {
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 3px;
+  padding: 5px 8px;
+  font-size: 0.85rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  color: var(--text-primary);
+  cursor: pointer;
+}
+
+.ribbon-btn:hover {
+  background-color: #edebe9;
+  border-color: #c8c6c4;
+}
+
+.ribbon-btn.active-btn {
+  background-color: #e1dfdd;
+  border-color: #8a8886;
+}
+
+.fmt-select {
+  padding: 4px 8px;
+  font-size: 0.85rem;
+  border: 1px solid var(--border-color);
+  border-radius: 3px;
+  background: white;
+  color: var(--text-primary);
+  outline: none;
+}
+
+/* Formula Bar */
+.formula-bar-container {
+  background-color: white;
+  display: flex;
+  align-items: center;
+  padding: 4px 8px;
+  border-bottom: 1px solid var(--border-color);
+  gap: 8px;
+  height: 36px;
+}
+
+.cell-name-box {
+  width: 70px;
+  padding: 3px 6px;
+  border: 1px solid var(--border-color);
+  background: #fdfdfd;
+  font-weight: 600;
+  font-size: 0.85rem;
+  text-align: center;
+}
+
+.fx-symbol {
+  font-family: Georgia, serif;
+  font-style: italic;
+  font-weight: 700;
+  color: var(--text-secondary);
+  font-size: 1.05rem;
+  padding: 0 4px;
+}
+
+.formula-input {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 0.9rem;
+  font-family: inherit;
+  color: var(--text-primary);
+  height: 100%;
+}
+
+/* Spreadsheet Grid View */
+.spreadsheet-workspace {
+  flex: 1;
+  position: relative;
+  overflow: auto;
+  background-color: #ffffff;
+}
+
+.grid-table {
+  border-collapse: collapse;
+  table-layout: fixed;
+  width: max-content;
+}
+
+.corner-header {
+  width: 45px;
+  height: 26px;
+  background-color: var(--header-bg);
+  border: 1px solid var(--border-color);
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 30;
+}
+
+.col-header {
+  width: 100px;
+  height: 26px;
+  background-color: var(--header-bg);
+  border: 1px solid var(--border-color);
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  text-align: center;
+}
+
+.row-header {
+  width: 45px;
+  height: 24px;
+  background-color: var(--header-bg);
+  border: 1px solid var(--border-color);
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  position: sticky;
+  left: 0;
+  z-index: 10;
+  text-align: center;
+}
+
+.grid-cell {
+  width: 100px;
+  height: 24px;
+  border: 1px solid #e1dfdd;
+  padding: 2px 6px;
+  font-size: 0.86rem;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  cursor: cell;
+  position: relative;
+}
+
+.grid-cell.active-cell {
+  outline: 2px solid var(--excel-selection);
+  outline-offset: -1px;
+  z-index: 5;
+  background-color: var(--excel-selection-bg);
+}
+
+.grid-cell.active-cell::after {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  right: -3px;
+  width: 6px;
+  height: 6px;
+  background: var(--excel-selection);
+  cursor: crosshair;
+}
+
+.cell-cycle-error {
+  background-color: #fde7e9 !important;
+  color: #a80000 !important;
+  font-weight: bold;
+}
+
+.cell-editor-input {
+  width: 100%;
+  height: 100%;
+  border: none;
+  outline: none;
+  font-family: inherit;
+  font-size: inherit;
+  background: white;
+}
+
+/* SVG Arrow Overlay for Audit */
+#audit-svg-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 15;
+}
+
+/* Sheet Tabs Strip */
+.sheet-tabs-bar {
+  background-color: #faf9f8;
+  border-top: 1px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  height: 32px;
+  padding: 0 10px;
+  gap: 6px;
+}
+
+.sheet-tab-item {
+  padding: 5px 14px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  cursor: pointer;
+  border: 1px solid transparent;
+  border-bottom: none;
+  border-radius: 4px 4px 0 0;
+  background: transparent;
+}
+
+.sheet-tab-item.active {
+  background: white;
+  color: var(--excel-green);
+  border-color: var(--border-color);
+  font-weight: 700;
+}
+
+/* Status Bar */
+.excel-status-bar {
+  background-color: var(--excel-green);
+  color: white;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 16px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.status-metrics {
+  display: flex;
+  gap: 16px;
+}
+
+/* Modal for Charts */
+.chart-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+}
+
+.chart-modal-card {
+  background: white;
+  border-radius: 8px;
+  padding: 20px;
+  width: 720px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.3);
+}
+
+.chart-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.btn-close-chart {
+  background: transparent;
+  border: none;
+  font-size: 1.3rem;
+  cursor: pointer;
+}
