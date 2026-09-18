@@ -402,3 +402,80 @@ body {
   font-size: 1.3rem;
   cursor: pointer;
 }
+
+
+/* Mobile Responsive Optimization */
+@media (max-width: 768px) {
+  .excel-title-bar {
+    padding: 6px 10px;
+    height: 40px;
+  }
+  
+  .file-name-tag {
+    display: none;
+  }
+
+  .btn-title-action {
+    padding: 3px 8px;
+    font-size: 0.75rem;
+  }
+
+  .ribbon-tabs {
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+  .ribbon-tabs::-webkit-scrollbar {
+    display: none;
+  }
+
+  .ribbon-tab {
+    padding: 6px 10px;
+    font-size: 0.8rem;
+    white-space: nowrap;
+  }
+
+  .ribbon-toolbar {
+    overflow-x: auto;
+    padding: 4px 8px;
+    scrollbar-width: none;
+  }
+  .ribbon-toolbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .ribbon-btn {
+    padding: 4px 6px;
+    font-size: 0.78rem;
+    white-space: nowrap;
+  }
+
+  .fmt-select {
+    font-size: 0.78rem;
+    padding: 3px 6px;
+  }
+
+  .formula-bar-container {
+    height: 32px;
+    padding: 2px 6px;
+  }
+
+  .cell-name-box {
+    width: 55px;
+    font-size: 0.78rem;
+    padding: 2px 4px;
+  }
+
+  .formula-input {
+    font-size: 0.82rem;
+  }
+
+  .status-metrics {
+    gap: 8px;
+    font-size: 0.7rem;
+  }
+  
+  .chart-modal-card {
+    width: 95%;
+    padding: 12px;
+  }
+}

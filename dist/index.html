@@ -2,29 +2,29 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <title>MatrixSheet — Institutional Reactive Spreadsheet Engine</title>
   <meta name="description" content="Next-gen spreadsheet engine with AST formula compiler, DAG reactive recalculation, topological sorting, and SVG formula auditing." />
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><rect width='24' height='24' rx='4' fill='%23107c41'/><text x='5' y='18' font-family='Arial' font-size='16' font-weight='bold' fill='white'>X</text></svg>" />
-  <script type="module" crossorigin src="/assets/index-B-1hhlrQ.js"></script>
-  <link rel="stylesheet" crossorigin href="/assets/index-7iVURFNL.css">
+  <script type="module" crossorigin src="./assets/index-DzauV3cR.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-wYaBlCjc.css">
 </head>
 <body>
   <!-- Title Bar -->
   <header class="excel-title-bar">
     <div class="brand-section">
-      <svg class="excel-icon-svg" viewBox="0 0 24 24">
+      <svg class="excel-icon-svg" viewBox="0 0 24 24" width="24" height="24" style="width: 24px; height: 24px; max-width: 24px; max-height: 24px; flex-shrink: 0;">
         <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-2 10h-4v4h-2v-4H7v-2h4V7h2v4h4v2z"/>
       </svg>
       <div class="workbook-title">
         <span>MatrixSheet</span>
-        <span style="opacity: 0.7;">- Financial_Valuation_Model_2026.xlsx</span>
+        <span class="file-name-tag" style="opacity: 0.8; font-size: 0.8rem;">- Financial_Valuation_Model_2026.xlsx</span>
       </div>
     </div>
 
     <div class="title-controls">
-      <button class="btn-title-action" id="btn-export-xlsx">Export .XLSX</button>
-      <button class="btn-title-action" id="btn-export-csv">Export CSV</button>
+      <button class="btn-title-action" id="btn-export-xlsx">.XLSX</button>
+      <button class="btn-title-action" id="btn-export-csv">CSV</button>
       <button class="btn-title-action" id="btn-lang-toggle">العربية</button>
     </div>
   </header>
@@ -61,21 +61,21 @@
     <!-- Formula Auditing Group -->
     <div class="tool-group">
       <button class="ribbon-btn" id="btn-trace-prec" title="Trace Precedents">
-        <span style="color: #107c41;">↗</span> Trace Precedents
+        <span style="color: #107c41; font-weight: bold;">↗</span> Precedents
       </button>
       <button class="ribbon-btn" id="btn-trace-dep" title="Trace Dependents">
-        <span style="color: #d83b01;">↘</span> Trace Dependents
+        <span style="color: #d83b01; font-weight: bold;">↘</span> Dependents
       </button>
       <button class="ribbon-btn" id="btn-remove-arrows" title="Remove Arrows">
-        ✕ Remove Arrows
+        ✕ Clear
       </button>
     </div>
 
     <!-- Charts Group -->
-    <div class="tool-group">
-      <button class="ribbon-btn" id="btn-chart-col">📊 Column Chart</button>
-      <button class="ribbon-btn" id="btn-chart-line">📈 Line Chart</button>
-      <button class="ribbon-btn" id="btn-chart-pie">🥧 Pie Chart</button>
+    <div class="tool-group" style="border: none;">
+      <button class="ribbon-btn" id="btn-chart-col">📊 Bar</button>
+      <button class="ribbon-btn" id="btn-chart-line">📈 Line</button>
+      <button class="ribbon-btn" id="btn-chart-pie">🥧 Pie</button>
     </div>
   </div>
 
@@ -100,7 +100,7 @@
 
   <!-- Status Bar -->
   <div class="excel-status-bar">
-    <div>Ready · DAG Recalculation Active</div>
+    <div class="status-mode">Ready · DAG Active</div>
     <div class="status-metrics">
       <span id="stat-sum">SUM: 450,000</span>
       <span id="stat-avg">AVERAGE: 450,000</span>
@@ -115,7 +115,7 @@
         <h3>📊 Dynamic Range Chart Studio</h3>
         <button class="btn-close-chart" id="btn-close-chart">✕</button>
       </div>
-      <canvas id="chart-canvas" width="680" height="340"></canvas>
+      <canvas id="chart-canvas" width="680" height="340" style="max-width: 100%; height: auto;"></canvas>
     </div>
   </div>
 
